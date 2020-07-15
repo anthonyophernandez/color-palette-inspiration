@@ -2,31 +2,28 @@
   {
     "id": "1",
     "colors": [
-      "-gray-100",
-      "-purple-900",
-      "-blue-200",
-      "-pink-400",
-      "-orange-300"
-    ]
-  },
-  {
-    "id": "2",
-    "colors": [
-      "-gray-100",
-      "-purple-900",
-      "-blue-200",
-      "-yellow-400",
-      "-gray-100"
-    ]
-  },
-  {
-    "id": "2",
-    "colors": [
       "-gray-900",
       "-gray-100",
-      "-blue-200",
-      "-orange-500",
-      "-gray-100"
+      "-pink-500",
+      "-orange-500"
+    ]
+  },
+  {
+    "id": "2",
+    "colors": [
+      "-gray-100",
+      "-purple-900",
+      "-blue-300",
+      "-pink-400"
+    ]
+  },
+  {
+    "id": "3",
+    "colors": [
+      "-gray-100",
+      "-purple-900",
+      "-blue-300",
+      "-yellow-400"
     ]
   }
 ]
