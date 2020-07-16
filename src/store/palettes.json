@@ -20,10 +20,100 @@
   {
     "id": "3",
     "colors": [
+      "-gray-900",
+      "-blue-200",
+      "-blue-600",
+      "-blue-500"
+    ]
+  },
+  {
+    "id": "4",
+    "colors": [
+      "-pink-200",
+      "-purple-900",
+      "-pink-400",
+      "-blue-300"
+    ]
+  },
+  {
+    "id": "5",
+    "colors": [
+      "-gray-900",
+      "-teal-200",
+      "-green-400",
+      "-green-700"
+    ]
+  },
+  {
+    "id": "6",
+    "colors": [
       "-gray-100",
       "-purple-900",
       "-blue-300",
       "-yellow-400"
+    ]
+  },
+  {
+    "id": "7",
+    "colors": [
+      "-gray-900",
+      "-gray-300",
+      "-green-500",
+      "-purple-700"
+    ]
+  },
+  {
+    "id": "7",
+    "colors": [
+      "-gray-300",
+      "-blue-900",
+      "-pink-500",
+      "-blue-400"
+    ]
+  },
+  {
+    "id": "8",
+    "colors": [
+      "-indigo-900",
+      "-yellow-500",
+      "-orange-600",
+      "-red-700"
+    ]
+  },
+  {
+    "id": "9",
+    "colors": [
+      "-gray-100",
+      "-indigo-600",
+      "-green-300",
+      "-green-600"
+    ]
+  },
+  {
+    "id": "10",
+    "colors": [
+      "-purple-900",
+      "-orange-300",
+      "-purple-500",
+      "-purple-700"
+    ]
+  },
+  {
+    "id": "11",
+    "colors": [
+      "-blue-200",
+      "-red-700",
+      "-purple-500",
+      "-blue-400"
+    ]
+  },
+  {
+    "id": "12",
+    "colors": [
+      "-gray-900",
+      "-yellow-500",
+      "-blue-500",
+      "-red-600"
     ]
   }
 ]
