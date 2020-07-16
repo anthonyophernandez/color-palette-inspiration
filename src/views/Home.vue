@@ -17,9 +17,9 @@
       </div>
     </aside>
     <!-- Main -->
-    <main class="w-full h-full overflow-x-auto">
+    <main class="w-full h-full overflow-x-auto" ref="top">
       <!-- Toolbar -->
-      <div class="flex w-full h-16" :class="'bg' + currentPalette[0]" id="top">
+      <div class="flex w-full h-16" :class="'bg' + currentPalette[0]">
         <button @click="showAsideBar = !showAsideBar" class="text-white font-bold focus:outline-none ">
           <!-- Menu Icon -->
           <svg v-show="!showAsideBar" xmlns="http://www.w3.org/2000/svg" class="w-12 h-12 ml-3 icon icon-tabler icon-tabler-menu stroke-current" :class="'text' + currentPalette[1]" viewBox="0 0 24 24" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round">
@@ -40,7 +40,7 @@
       <section class="relative w-full min-h-full overflow-hidden">
 
         <section class="pb-16" :class="'bg' + currentPalette[0]">
-          <div class="flex flex-col-reverse md:flex-row justify-between w-4/5 lg:w-4/5 xl:w-5/6 m-auto">
+          <div class="flex flex-col-reverse md:flex-row justify-between w-4/5 lg:w-4/5 xl:w-4/6 m-auto">
             <div class="w-full md:w-1/2">
               <h2 class="text-4xl font-bold mb-3" :class="'text' + currentPalette[1]">Lorem ipsum dolor sit amet consectetur adipisicing elit</h2>
               <p class="leading-relaxed text-base" :class="'text' + currentPalette[1]">Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae, sit, odit ipsam libero nisi eos veritatis delectus veniam ullam, placeat consectetur incidunt perferendis dolorum rem nam nesciunt est quia soluta? Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ipsa quibusdam esse ex sed sint rem, quisquam autem repellat blanditiis eum doloremque tenetur reiciendis soluta doloribus velit, deleniti commodi placeat ipsam?</p>
@@ -57,7 +57,7 @@
         </section>
 
         <section class="pb-16" :class="'bg' + currentPalette[1]">
-          <div class="w-4/5 lg:w-4/5 xl:w-5/6 m-auto py-8">
+          <div class="w-4/5 lg:w-4/5 xl:w-4/6 m-auto py-8">
             <div class="w-1/2 m-auto mb-8">
               <h2 class="text-4xl text-center font-bold" :class="'text' + currentPalette[0]">Lorem ipsum dolor sit</h2>
               <p class="text-center ml-3 leading-relaxed text-base" :class="'text' + currentPalette[0]">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
@@ -83,7 +83,7 @@
         </section>
 
         <section class="pb-16" :class="'bg' + currentPalette[0]">
-          <div class="w-4/5 lg:w-4/5 xl:w-5/6 m-auto">
+          <div class="w-4/5 lg:w-4/5 xl:w-4/6 m-auto">
             <div class="py-8">
               <h2 class="text-4xl font-bold" :class="'text' + currentPalette[1]">Lorem ipsum dolor sit</h2>
               <p class="leading-relaxed text-base" :class="'text' + currentPalette[1]">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
@@ -109,7 +109,7 @@
         </section>
 
         <section class="pb-16" :class="'bg' + currentPalette[1]">
-          <div class="w-4/5 lg:w-4/5 xl:w-5/6 m-auto">
+          <div class="w-4/5 lg:w-4/5 xl:w-4/6 m-auto">
             <div class="flex flex-col-reverse md:flex-row justify-between mb-6">
               <div class="w-full md:w-1/2 py-6">
                 <h2 class="text-4xl font-bold mb-3" :class="'text' + currentPalette[0]">Lorem ipsum dolor sit amet consectetur adipisicing elit</h2>
@@ -151,7 +151,7 @@
         </section>
 
         <footer class="pt-8 pb-4" :class="'bg' + currentPalette[0]">
-          <div class="w-4/5 lg:w-4/5 xl:w-5/6 m-auto mb-6">
+          <div class="w-4/5 lg:w-4/5 xl:w-4/6 m-auto mb-6">
             <div class="flex flex-col md:flex-row justify-between">
               <div class="w-full md:w-1/2 mb-8">
                 <h3 class="text-xl font-bold" :class="'text' + currentPalette[1]">Lorem ipsum</h3>
@@ -168,14 +168,14 @@
           <div class="w-full text-center" :class="'text' + currentPalette[1]">©20XX. All Rights Reserved.</div>
         </footer>
 
-        <a href="#top" class="flex justify-center items-center fixed right-0 bottom-0 rounded-full border-2 cursor-pointer mr-4 mb-4 w-16 h-16 bg-gray-100" :class="['bg' + currentPalette[0], 'border' + currentPalette[1]]">
+        <button @click="scrollToTop" class="flex justify-center items-center fixed right-0 bottom-0 focus:outline-none rounded-full border-2 cursor-pointer mr-4 mb-4 w-16 h-16 bg-gray-100" :class="['bg' + currentPalette[0], 'border' + currentPalette[1]]">
           <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-arrow-up w-12 h-12 stroke-current" :class="'text' + currentPalette[1]" viewBox="0 0 24 24" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round">
             <path stroke="none" d="M0 0h24v24H0z"/>
             <line x1="12" y1="5" x2="12" y2="19" />
             <line x1="18" y1="11" x2="12" y2="5" />
             <line x1="6" y1="11" x2="12" y2="5" />
           </svg>
-        </a>
+        </button>
       </section>
     </main>
   </div>
@@ -210,6 +210,9 @@ export default {
     },
     setCurrentPalette (index) {
       this.currentPalette = this.palettes[index].colors
+    },
+    scrollToTop () {
+      this.$refs.top.scrollTop = 0
     }
   },
   created () {
