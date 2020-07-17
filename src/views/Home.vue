@@ -39,7 +39,7 @@
       <!-- Content -->
       <section class="relative w-full min-h-full overflow-hidden">
 
-        <section class="pb-16" :class="'bg' + currentPalette[0]">
+        <section ref="section-1" class="relative pb-16" :class="'bg' + currentPalette[0]">
           <div class="flex flex-col-reverse md:flex-row justify-between w-4/5 lg:w-4/5 xl:w-4/6 m-auto">
             <div class="w-full md:w-1/2">
               <h2 class="text-4xl font-bold mb-3" :class="'text' + currentPalette[1]">Lorem ipsum dolor sit amet consectetur adipisicing elit</h2>
@@ -54,9 +54,10 @@
               <path d="M13.9 13l1 -1a3 5 0 0 1 3 0l 2 2" />
             </svg>
           </div>
+          <CopyToClipboard class="absolute right-0 top-0 mt-2 mr-2" section="section-1" :color="'text' + currentPalette[1]" />
         </section>
 
-        <section class="pb-16" :class="'bg' + currentPalette[1]">
+        <section ref="section-2" class="relative pb-16" :class="'bg' + currentPalette[1]">
           <div class="w-4/5 lg:w-4/5 xl:w-4/6 m-auto py-8">
             <div class="w-1/2 m-auto mb-8">
               <h2 class="text-4xl text-center font-bold" :class="'text' + currentPalette[0]">Lorem ipsum dolor sit</h2>
@@ -80,9 +81,10 @@
               </div>
             </div>
           </div>
+          <CopyToClipboard class="absolute right-0 top-0 mt-2 mr-2" section="section-2" :color="'text' + currentPalette[0]" />
         </section>
 
-        <section class="pb-16" :class="'bg' + currentPalette[0]">
+        <section ref="section-3" class="relative pb-16" :class="'bg' + currentPalette[0]">
           <div class="w-4/5 lg:w-4/5 xl:w-4/6 m-auto">
             <div class="py-8">
               <h2 class="text-4xl font-bold" :class="'text' + currentPalette[1]">Lorem ipsum dolor sit</h2>
@@ -106,9 +108,10 @@
               </div>
             </div>
           </div>
+          <CopyToClipboard class="absolute right-0 top-0 mt-2 mr-2" section="section-3" :color="'text' + currentPalette[1]" />
         </section>
 
-        <section class="pb-16" :class="'bg' + currentPalette[1]">
+        <section ref="section-4" class="relative pb-16" :class="'bg' + currentPalette[1]">
           <div class="w-4/5 lg:w-4/5 xl:w-4/6 m-auto">
             <div class="flex flex-col-reverse md:flex-row justify-between mb-6">
               <div class="w-full md:w-1/2 py-6">
@@ -148,9 +151,10 @@
               </form>
             </div>
           </div>
+          <CopyToClipboard class="absolute right-0 top-0 mt-2 mr-2" section="section-4" :color="'text' + currentPalette[0]" />
         </section>
 
-        <footer class="pt-8 pb-4" :class="'bg' + currentPalette[0]">
+        <footer ref="footer" class="relative pt-8 pb-4" :class="'bg' + currentPalette[0]">
           <div class="w-4/5 lg:w-4/5 xl:w-4/6 m-auto mb-6">
             <div class="flex flex-col md:flex-row justify-between">
               <div class="w-full md:w-1/2 mb-8">
@@ -166,6 +170,7 @@
             </div>
           </div>
           <div class="w-full text-center" :class="'text' + currentPalette[1]">©20XX. All Rights Reserved.</div>
+          <CopyToClipboard class="absolute right-0 top-0 mt-2 mr-2" section="footer" :color="'text' + currentPalette[1]" />
         </footer>
 
         <button @click="scrollToTop" class="flex justify-center items-center fixed right-0 bottom-0 focus:outline-none rounded-full border-2 cursor-pointer mr-4 mb-4 w-16 h-16 bg-gray-100" :class="['bg' + currentPalette[0], 'border' + currentPalette[1]]">
@@ -183,9 +188,11 @@
 
 <script>
 import { mapState } from 'vuex'
+import CopyToClipboard from '../components/CopyToClipboard.vue'
 export default {
   name: 'Home',
   components: {
+    CopyToClipboard
   },
   data () {
     return {
