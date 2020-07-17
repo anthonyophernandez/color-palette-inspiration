@@ -44,7 +44,7 @@
             <div class="w-full md:w-1/2">
               <h2 class="text-4xl font-bold mb-3" :class="'text' + currentPalette[1]">Lorem ipsum dolor sit amet consectetur adipisicing elit</h2>
               <p class="leading-relaxed text-base" :class="'text' + currentPalette[1]">Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae, sit, odit ipsam libero nisi eos veritatis delectus veniam ullam, placeat consectetur incidunt perferendis dolorum rem nam nesciunt est quia soluta? Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ipsa quibusdam esse ex sed sint rem, quisquam autem repellat blanditiis eum doloremque tenetur reiciendis soluta doloribus velit, deleniti commodi placeat ipsam?</p>
-              <button class="w-full sm:w-64 h-12 mx-auto mt-6 py-2 px-5 font-bold focus:outline-none rounded" :class="['bg' + currentPalette[3], 'text' + currentPalette[1]]">Button</button>
+              <button class="w-full sm:w-64 h-12 mx-auto mt-6 py-2 px-5 font-bold focus:outline-none rounded" :class="['bg' + currentPalette[3], 'text' + currentPalette[1]]" @click="randomPalette">Try changing the palette!</button>
             </div>
             <svg xmlns="http://www.w3.org/2000/svg" class="w-64 h-64 m-auto icon icon-tabler icon-tabler-photo stroke-current" :class="'text' + currentPalette[1]" viewBox="0 0 24 24" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round">
               <path stroke="none" d="M0 0h24v24H0z"/>
@@ -54,7 +54,7 @@
               <path d="M13.9 13l1 -1a3 5 0 0 1 3 0l 2 2" />
             </svg>
           </div>
-          <CopyToClipboard class="absolute right-0 top-0 mt-2 mr-2" section="section-1" :color="'text' + currentPalette[1]" />
+          <CopyToClipboard class="absolute right-0 top-0 mt-1 mr-2" section="section-1" :color="'text' + currentPalette[1]" />
         </section>
 
         <section ref="section-2" class="relative pb-16" :class="'bg' + currentPalette[1]">
@@ -81,7 +81,7 @@
               </div>
             </div>
           </div>
-          <CopyToClipboard class="absolute right-0 top-0 mt-2 mr-2" section="section-2" :color="'text' + currentPalette[0]" />
+          <CopyToClipboard class="absolute right-0 top-0 mt-1 mr-2" section="section-2" :color="'text' + currentPalette[0]" />
         </section>
 
         <section ref="section-3" class="relative pb-16" :class="'bg' + currentPalette[0]">
@@ -108,7 +108,7 @@
               </div>
             </div>
           </div>
-          <CopyToClipboard class="absolute right-0 top-0 mt-2 mr-2" section="section-3" :color="'text' + currentPalette[1]" />
+          <CopyToClipboard class="absolute right-0 top-0 mt-1 mr-2" section="section-3" :color="'text' + currentPalette[1]" />
         </section>
 
         <section ref="section-4" class="relative pb-16" :class="'bg' + currentPalette[1]">
@@ -151,7 +151,7 @@
               </form>
             </div>
           </div>
-          <CopyToClipboard class="absolute right-0 top-0 mt-2 mr-2" section="section-4" :color="'text' + currentPalette[0]" />
+          <CopyToClipboard class="absolute right-0 top-0 mt-1 mr-2" section="section-4" :color="'text' + currentPalette[0]" />
         </section>
 
         <footer ref="footer" class="relative pt-8 pb-4" :class="'bg' + currentPalette[0]">
@@ -170,7 +170,7 @@
             </div>
           </div>
           <div class="w-full text-center" :class="'text' + currentPalette[1]">©20XX. All Rights Reserved.</div>
-          <CopyToClipboard class="absolute right-0 top-0 mt-2 mr-2" section="footer" :color="'text' + currentPalette[1]" />
+          <CopyToClipboard class="absolute right-0 top-0 mt-1 mr-2" section="footer" :color="'text' + currentPalette[1]" />
         </footer>
 
         <button @click="scrollToTop" class="flex justify-center items-center fixed right-0 bottom-0 focus:outline-none rounded-full border-2 cursor-pointer mr-4 mb-4 w-16 h-16 bg-gray-100" :class="['bg' + currentPalette[0], 'border' + currentPalette[1]]">
@@ -220,6 +220,10 @@ export default {
     },
     scrollToTop () {
       this.$refs.top.scrollTop = 0
+    },
+    randomPalette () {
+      const id = Math.floor(Math.random() * this.palettes.length)
+      this.selectPalette(id)
     }
   },
   created () {
