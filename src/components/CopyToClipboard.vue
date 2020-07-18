@@ -7,8 +7,9 @@
         <path d="M16 8v-2a2 2 0 0 0 -2 -2h-8a2 2 0 0 0 -2 2v8a2 2 0 0 0 2 2h2" />
       </svg>
     </button>
-    <p class="text-xs sm:text-sm" v-show="!isCopied" :class="color">Copy HTML</p>
-    <p class="text-xs sm:text-sm" v-show="isCopied" :class="color">Copied!</p>
+    <transition name='fade'>
+      <p class="text-xs sm:text-sm" v-show="isCopied" :class="color">Copied!</p>
+    </transition>
   </div>
 </template>
 
@@ -33,3 +34,12 @@ export default {
   }
 }
 </script>
+
+<style scoped>
+  .fade-enter-active, .fade-leave-active {
+    transition: opacity .5s;
+  }
+  .fade-enter, .fade-leave-to {
+    opacity: 0;
+  }
+</style>

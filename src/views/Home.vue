@@ -1,26 +1,28 @@
 <template>
-  <div class="flex w-full h-full">
+  <div class="flex w-full h-full" :class="'bg' + currentPalette[0]">
     <!-- Color Palette Selection -->
-    <aside v-show="showAsideBar" class="w-64 sm:w-48 h-full py-2 overflow-y-auto" :class="'bg' + currentPalette[0]">
-      <div
-        class="flex w-32 h-16 mx-auto mb-4 rounded shadow-lg cursor-pointer"
-        v-for="(palette, index) in palettes"
-        :key="index" @click="selectPalette(index)"
-        :class="selectedClass(index)"
-      >
+    <transition name="hide">
+      <aside v-show="showAsideBar" class="w-64 sm:w-48 h-full py-2 overflow-y-auto" :class="'bg' + currentPalette[0]">
         <div
-          class="w-full h-full border border-indigo-700"
-          v-for="(color, index) in palette.colors"
-          :key="index"
-          :class="'bg' + color">
+          class="flex w-32 h-16 mx-auto mb-4 rounded shadow-lg cursor-pointer"
+          v-for="(palette, index) in palettes"
+          :key="index" @click="selectPalette(index)"
+          :class="selectedClass(index)"
+        >
+          <div
+            class="w-full h-full border border-indigo-700"
+            v-for="(color, index) in palette.colors"
+            :key="index"
+            :class="'bg' + color">
+          </div>
         </div>
-      </div>
-    </aside>
+      </aside>
+    </transition>
     <!-- Main -->
     <main class="w-full h-full overflow-x-auto" ref="top">
       <!-- Toolbar -->
       <div class="flex w-full h-16" :class="'bg' + currentPalette[0]">
-        <button @click="showAsideBar = !showAsideBar" class="text-white font-bold focus:outline-none ">
+        <button @click="toggleSidebar" class="text-white font-bold focus:outline-none ">
           <!-- Menu Icon -->
           <svg v-show="!showAsideBar" xmlns="http://www.w3.org/2000/svg" class="w-12 h-12 ml-3 icon icon-tabler icon-tabler-menu stroke-current" :class="'text' + currentPalette[1]" viewBox="0 0 24 24" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round">
             <path stroke="none" d="M0 0h24v24H0z"/>
@@ -196,7 +198,7 @@ export default {
   },
   data () {
     return {
-      showAsideBar: true,
+      showAsideBar: false,
       selectedPalette: -1,
       currentPalette: []
     }
@@ -224,6 +226,9 @@ export default {
     randomPalette () {
       const id = Math.floor(Math.random() * this.palettes.length)
       this.selectPalette(id)
+    },
+    toggleSidebar () {
+      this.showAsideBar = !this.showAsideBar
     }
   },
   created () {
@@ -231,3 +236,12 @@ export default {
   }
 }
 </script>
+
+<style scoped>
+  .hide-enter-active, .hide-leave-active {
+    transition: 0.15s ease-in-out;
+  }
+  .hide-enter, .hide-leave-to {
+    transform: translate(-100%);
+  }
+</style>

@@ -1,24 +1,17 @@
 # color-palette-inspiration
 
-## Project setup
+## Description
+
+A color palette inspiration site that shows how colors could be used in your projects.
+
+## Goals of this small project
+
+Learning how to use $parent and $refs, and CSS transitions.
+
+And how to create responsive designs with Tailwind CSS.
+
+## To see the demo, run
 ```
 npm install
-```
-
-### Compiles and hot-reloads for development
-```
 npm run serve
 ```
-
-### Compiles and minifies for production
-```
-npm run build
-```
-
-### Lints and fixes files
-```
-npm run lint
-```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
