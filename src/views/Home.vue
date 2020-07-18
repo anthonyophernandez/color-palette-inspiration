@@ -143,11 +143,11 @@
               <form @submit.prevent="" class="flex flex-col lg:flex-row items-end">
                 <div class="flex flex-col w-full lg:w-5/12 mr-1">
                   <label class="font-bold mt-2 mb-2" :class="'text' + currentPalette[0]" for="name">First Name</label>
-                  <input class="font-bold h-16 py-4 px-3 rounded" :class="['bg' + currentPalette[0],'placeholder' + currentPalette[1]]" id="name" type="text" placeholder="Your name">
+                  <input class="font-bold h-16 py-4 px-3 rounded" :class="['bg' + currentPalette[0], 'placeholder' + currentPalette[1]]" id="name" type="text" placeholder="Your name">
                 </div>
                 <div class="flex flex-col w-full lg:w-5/12 mr-1">
                   <label class="font-bold mt-2 mb-2" :class="'text' + currentPalette[0]" for="email">First Name</label>
-                  <input class="font-bold h-16 py-4 px-3 rounded" :class="['bg' + currentPalette[0],'placeholder' + currentPalette[1]]" id="email" type="email" placeholder="you@example.com">
+                  <input class="font-bold h-16 py-4 px-3 rounded" :class="['bg' + currentPalette[0], 'placeholder' + currentPalette[1]]" id="email" type="email" placeholder="you@example.com">
                 </div>
                 <button class="h-16 w-full lg:w-2/12 mr-1 mt-2 rounded font-bold focus:outline-none" :class="['bg' + currentPalette[2], 'text' + currentPalette[1]]">Subscribe</button>
               </form>
