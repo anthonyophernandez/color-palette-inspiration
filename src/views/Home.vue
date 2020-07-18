@@ -232,6 +232,7 @@ export default {
     }
   },
   created () {
+    this.$store.dispatch('loadPalettes')
     this.selectPalette(0)
   }
 }

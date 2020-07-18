@@ -7,11 +7,17 @@ Vue.use(Vuex)
 
 export default new Vuex.Store({
   state: {
-    palettes: palettesJSON
+    palettes: []
   },
   mutations: {
+    LOAD_PALETTES (state) {
+      state.palettes = palettesJSON
+    }
   },
   actions: {
+    loadPalettes ({ commit }) {
+      commit('LOAD_PALETTES')
+    }
   },
   modules: {
   }
