@@ -59,7 +59,7 @@
               <path d="M13.9 13l1 -1a3 5 0 0 1 3 0l 2 2" />
             </svg>
           </div>
-          <CopyToClipboard class="absolute right-0 top-0 mt-1 mr-2" section="section-1" :color="'text' + currentPalette[1]" />
+          <CopyToClipboard v-show="!showAsideBar" class="absolute right-0 top-0 mt-1 mr-2" section="section-1" :color="'text' + currentPalette[1]" />
         </section>
 
         <section ref="section-2" class="relative pb-16" :class="'bg' + currentPalette[1]">
@@ -86,7 +86,7 @@
               </div>
             </div>
           </div>
-          <CopyToClipboard class="absolute right-0 top-0 mt-1 mr-2" section="section-2" :color="'text' + currentPalette[0]" />
+          <CopyToClipboard v-show="!showAsideBar" class="absolute right-0 top-0 mt-1 mr-2" section="section-2" :color="'text' + currentPalette[0]" />
         </section>
 
         <section ref="section-3" class="relative pb-16" :class="'bg' + currentPalette[0]">
@@ -113,7 +113,7 @@
               </div>
             </div>
           </div>
-          <CopyToClipboard class="absolute right-0 top-0 mt-1 mr-2" section="section-3" :color="'text' + currentPalette[1]" />
+          <CopyToClipboard v-show="!showAsideBar" class="absolute right-0 top-0 mt-1 mr-2" section="section-3" :color="'text' + currentPalette[1]" />
         </section>
 
         <section ref="section-4" class="relative pb-16" :class="'bg' + currentPalette[1]">
@@ -156,7 +156,7 @@
               </form>
             </div>
           </div>
-          <CopyToClipboard class="absolute right-0 top-0 mt-1 mr-2" section="section-4" :color="'text' + currentPalette[0]" />
+          <CopyToClipboard v-show="!showAsideBar" class="absolute right-0 top-0 mt-1 mr-2" section="section-4" :color="'text' + currentPalette[0]" />
         </section>
 
         <footer ref="footer" class="relative pt-8 pb-4" :class="'bg' + currentPalette[0]">
@@ -175,7 +175,7 @@
             </div>
           </div>
           <div class="w-full text-center" :class="'text' + currentPalette[1]">©20XX. All Rights Reserved.</div>
-          <CopyToClipboard class="absolute right-0 top-0 mt-1 mr-2" section="footer" :color="'text' + currentPalette[1]" />
+          <CopyToClipboard v-show="!showAsideBar" class="absolute right-0 top-0 mt-1 mr-2" section="footer" :color="'text' + currentPalette[1]" />
         </footer>
 
         <button @click="scrollToTop" class="flex justify-center items-center fixed right-0 bottom-0 focus:outline-none rounded-full border-2 cursor-pointer mr-4 mb-4 w-16 h-16 bg-gray-100" :class="['bg' + currentPalette[0], 'border' + currentPalette[1]]">
